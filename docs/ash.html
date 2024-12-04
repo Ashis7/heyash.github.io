@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            overflow: hidden;
+        }
+
+        header {
+            font-size: 80px;
+            font-weight: bold;
+            color: #39ff14;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+        }
+
+        .typing {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 2s steps(3, end) infinite alternate, blink 0.5s step-end infinite;
+        }
+
+        @keyframes typing {
+            0% {
+                width: 3ch;
+            }
+            100% {
+                width: 6ch;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-right: 3px solid white;
+            }
+        }
+
+        .mask {
+            margin: 50px auto;
+            width: 200px;
+            height: 200px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/99/Guy_Fawkes_mask.svg') no-repeat center;
+            background-size: contain;
+            animation: spin 5s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 30%;
+            transform: translateY(-50%);
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .buttons {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            text-align: right;
+        }
+
+        .button {
+            display: block;
+            background-color: #d3a97e;
+            color: black;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            width: 200px;
+        }
+
+        .button:hover {
+            background-color: #2cff7d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="typing">Ash...</span>
+    </header>
+
+    <div class="mask"></div>
+
+    <div class="buttons">
+        <a href="#" class="button">Deep Learning</a>
+        <a href="#" class="button">Blockchain</a>
+        <a href="#" class="button">Artificial Intelligence</a>
+    </div>
+</body>
+</html>
